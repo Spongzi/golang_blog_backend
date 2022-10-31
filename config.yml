@@ -1,0 +1,21 @@
+app:
+  name: "golang_blog"
+  model: "dev"
+  port: 8081
+
+log:
+  level: "debug"
+  filename: "golang_blog.log"
+  max_size: 200
+  max_age: 30
+  max_backups: 7
+mysql:
+  host: "127.0.0.1"
+  port: 3306
+  user: "root"
+  password: "123456"
+  dbname: "sql_demo"
+redis:
+  host: "127.0.0.1"
+  port: 6379
+  db: 0
