@@ -7,15 +7,16 @@ import (
 )
 
 func Init() (err error) {
-	viper.SetConfigName("config")
-	viper.SetConfigType("yml")
-	viper.AddConfigPath("./")
+	viper.SetConfigFile("config.y")
+	//viper.SetConfigName("config")
+	//viper.SetConfigType("yaml")
+	viper.AddConfigPath(".")
 	err = viper.ReadInConfig()
 	if err != nil {
 		fmt.Printf("viper.ReadInConfig() failed, err: %s \n", err)
 		return
 	}
-	err = viper.WatchRemoteConfig()
+	viper.WatchConfig()
 	if err != nil {
 		fmt.Printf("viper.WatchRemoteConfig() failed, err: %s \n", err)
 		return
